@@ -1,4 +1,4 @@
-// Type definitions for Knex.js 0.14
+// Type definitions for Knex.js 0.15
 // Project: https://github.com/tgriesser/knex
 // Definitions by: Qubo <https://github.com/tkQubo>
 //                 Baronfel <https://github.com/baronfel>
@@ -6,6 +6,7 @@
 //                 Matt R. Wilson <https://github.com/mastermatt>
 //                 Satana Charuwichitratana <https://github.com/micksatana>
 //                 Shrey Jain <https://github.com/shreyjain1994>
+//                 Anup Kishore <https://github.com/anup-2s>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.3
 
@@ -20,7 +21,7 @@ type Client = Function;
 type Value = string | number | boolean | Date | Array<string> | Array<number> | Array<Date> | Array<boolean> | Buffer | Knex.Raw;
 type ValueMap = { [key: string]: Value | Knex.QueryBuilder };
 type ColumnName = string | Knex.Raw | Knex.QueryBuilder | {[key: string]: string };
-type TableName = string | Knex.Raw | Knex.QueryBuilder;
+type TableName = string | Knex.Raw | Knex.QueryBuilder | { [key: string]: string };
 
 interface Knex extends Knex.QueryInterface {
     (tableName?: TableName): Knex.QueryBuilder;

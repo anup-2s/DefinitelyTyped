@@ -602,6 +602,11 @@ knex.withWrapped("antique_books", function (qb) {
   qb.select('*').from('books').where('published_date', '<', 1899);
 }).select('*').from('antique_books');
 
+// Table aliasing
+knex({ books1: 'books', books2: 'books'}).select('*');
+knex.select('*').from({ books1: 'books', books2: 'books'});
+knex.select({ books1: 'books', books2: 'books'}, '*');
+
 var someExternalMethod: Function;
 
 knex.transaction(function(trx) {
